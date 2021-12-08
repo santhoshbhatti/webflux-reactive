@@ -55,4 +55,10 @@ public class ReactiveMathService {
 		return mathTuple.map(m -> new Response(m.getA() * m.getB()));
 		
 	}
+
+	public Mono<Response> cube(Integer num) {
+		return Mono.fromSupplier(() -> {
+			return new Response(num * num * num);
+		});
+	}
 }
